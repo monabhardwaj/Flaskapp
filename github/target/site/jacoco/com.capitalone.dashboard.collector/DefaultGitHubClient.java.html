@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DefaultGitHubClient.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">com.capitalone.dashboard:github-scm-collector</a> &gt; <a href="index.source.html" class="el_package">com.capitalone.dashboard.collector</a> &gt; <span class="el_source">DefaultGitHubClient.java</span></div><h1>DefaultGitHubClient.java</h1><pre class="source lang-java linenums">package com.capitalone.dashboard.collector;
+
+import com.capitalone.dashboard.model.Commit;
+import com.capitalone.dashboard.model.CommitType;
+import com.capitalone.dashboard.model.GitHubRepo;
+import com.capitalone.dashboard.util.Encryption;
+import com.capitalone.dashboard.util.EncryptionException;
+import com.capitalone.dashboard.util.Supplier;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.joda.time.DateTime;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestOperations;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.TimeZone;
+
+/**
+ * GitHubClient implementation that uses SVNKit to fetch information about
+ * Subversion repositories.
+ */
+
+@Component
+public class DefaultGitHubClient implements GitHubClient {
+<span class="nc" id="L44">	private static final Log LOG = LogFactory.getLog(DefaultGitHubClient.class);</span>
+
+	private final GitHubSettings settings;
+
+	private final RestOperations restOperations;
+	private static final String SEGMENT_API = &quot;/api/v3/repos/&quot;;
+	private static final String PUBLIC_GITHUB_REPO_HOST = &quot;api.github.com/repos/&quot;;
+	private static final String PUBLIC_GITHUB_HOST_NAME = &quot;github.com&quot;;
+	private static final int FIRST_RUN_HISTORY_DEFAULT = 14;
+
+	@Autowired
+	public DefaultGitHubClient(GitHubSettings settings,
+<span class="nc" id="L56">			Supplier&lt;RestOperations&gt; restOperationsSupplier) {</span>
+<span class="nc" id="L57">		this.settings = settings;</span>
+<span class="nc" id="L58">		this.restOperations = restOperationsSupplier.get();</span>
+<span class="nc" id="L59">	}</span>
+
+	@Override
+	@SuppressWarnings({&quot;PMD.NPathComplexity&quot;,&quot;PMD.ExcessiveMethodLength&quot;}) // agreed, fixme
+	public List&lt;Commit&gt; getCommits(GitHubRepo repo, boolean firstRun) {
+
+<span class="nc" id="L65">		List&lt;Commit&gt; commits = new ArrayList&lt;&gt;();</span>
+
+		// format URL
+<span class="nc" id="L68">		String repoUrl = (String) repo.getOptions().get(&quot;url&quot;);</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">		if (repoUrl.endsWith(&quot;.git&quot;)) {</span>
+<span class="nc" id="L70">			repoUrl = repoUrl.substring(0, repoUrl.lastIndexOf(&quot;.git&quot;));</span>
+		}
+		URL url;
+<span class="nc" id="L73">		String hostName = &quot;&quot;;</span>
+<span class="nc" id="L74">		String protocol = &quot;&quot;;</span>
+		try {
+<span class="nc" id="L76">			url = new URL(repoUrl);</span>
+<span class="nc" id="L77">			hostName = url.getHost();</span>
+<span class="nc" id="L78">			protocol = url.getProtocol();</span>
+<span class="nc" id="L79">		} catch (MalformedURLException e) {</span>
+			// TODO Auto-generated catch block
+<span class="nc" id="L81">			LOG.error(e.getMessage());</span>
+<span class="nc" id="L82">		}</span>
+<span class="nc" id="L83">		String hostUrl = protocol + &quot;://&quot; + hostName + &quot;/&quot;;</span>
+<span class="nc" id="L84">		String repoName = repoUrl.substring(hostUrl.length(), repoUrl.length());</span>
+		String apiUrl;
+<span class="nc bnc" id="L86" title="All 2 branches missed.">		if (hostName.startsWith(PUBLIC_GITHUB_HOST_NAME)) {</span>
+<span class="nc" id="L87">			apiUrl = protocol + &quot;://&quot; + PUBLIC_GITHUB_REPO_HOST + repoName;</span>
+		} else {
+<span class="nc" id="L89">			apiUrl = protocol + &quot;://&quot; + hostName + SEGMENT_API + repoName;</span>
+<span class="nc" id="L90">			LOG.debug(&quot;API URL IS:&quot;+apiUrl);</span>
+		}
+		Date dt;
+<span class="nc bnc" id="L93" title="All 2 branches missed.">		if (firstRun) {</span>
+<span class="nc" id="L94">			int firstRunDaysHistory = settings.getFirstRunHistoryDays();</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">			if (firstRunDaysHistory &gt; 0) {</span>
+<span class="nc" id="L96">				dt = getDate(new Date(), -firstRunDaysHistory, 0);</span>
+			} else {
+<span class="nc" id="L98">				dt = getDate(new Date(), -FIRST_RUN_HISTORY_DEFAULT, 0);</span>
+			}
+<span class="nc" id="L100">		} else {</span>
+<span class="nc" id="L101">			dt = getDate(new Date(repo.getLastUpdated()), 0, -10);</span>
+		}
+<span class="nc" id="L103">		Calendar calendar = new GregorianCalendar();</span>
+<span class="nc" id="L104">		TimeZone timeZone = calendar.getTimeZone();</span>
+<span class="nc" id="L105">		Calendar cal = Calendar.getInstance(timeZone);</span>
+<span class="nc" id="L106">		cal.setTime(dt);</span>
+<span class="nc" id="L107">		String thisMoment = String.format(&quot;%tFT%&lt;tRZ&quot;, cal);</span>
+
+<span class="nc" id="L109">		String queryUrl = apiUrl.concat(&quot;/commits?sha=&quot; + repo.getBranch()</span>
+				+ &quot;&amp;since=&quot; + thisMoment);
+		/*
+		 * Calendar cal = Calendar.getInstance(); cal.setTime(dateInstance);
+		 * cal.add(Calendar.DATE, -30); Date dateBefore30Days = cal.getTime();
+		 */
+
+		// decrypt password
+<span class="nc" id="L117">		String decryptedPassword = &quot;&quot;;</span>
+<span class="nc bnc" id="L118" title="All 4 branches missed.">		if (repo.getPassword() != null &amp;&amp; !repo.getPassword().isEmpty()) {</span>
+			try {
+<span class="nc" id="L120">				decryptedPassword = Encryption.decryptString(</span>
+<span class="nc" id="L121">						repo.getPassword(), settings.getKey());</span>
+<span class="nc" id="L122">			} catch (EncryptionException e) {</span>
+<span class="nc" id="L123">				LOG.error(e.getMessage());</span>
+<span class="nc" id="L124">			}</span>
+		}
+<span class="nc" id="L126">		boolean lastPage = false;</span>
+<span class="nc" id="L127">		int pageNumber = 1;</span>
+<span class="nc" id="L128">		String queryUrlPage = queryUrl;</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">		while (!lastPage) {</span>
+			try {
+<span class="nc" id="L131">				ResponseEntity&lt;String&gt; response = makeRestCall(queryUrlPage, repo.getUserId(), decryptedPassword);</span>
+<span class="nc" id="L132">				JSONArray jsonArray = paresAsArray(response);</span>
+<span class="nc bnc" id="L133" title="All 2 branches missed.">				for (Object item : jsonArray) {</span>
+<span class="nc" id="L134">					JSONObject jsonObject = (JSONObject) item;</span>
+<span class="nc" id="L135">					String sha = str(jsonObject, &quot;sha&quot;);</span>
+<span class="nc" id="L136">					JSONObject commitObject = (JSONObject) jsonObject.get(&quot;commit&quot;);</span>
+<span class="nc" id="L137">					JSONObject authorObject = (JSONObject) commitObject.get(&quot;author&quot;);</span>
+<span class="nc" id="L138">					String message = str(commitObject, &quot;message&quot;);</span>
+<span class="nc" id="L139">					String author = str(authorObject, &quot;name&quot;);</span>
+<span class="nc" id="L140">					long timestamp = new DateTime(str(authorObject, &quot;date&quot;))</span>
+<span class="nc" id="L141">							.getMillis();</span>
+<span class="nc" id="L142">                    JSONArray parents = (JSONArray) jsonObject.get(&quot;parents&quot;);</span>
+<span class="nc" id="L143">					List&lt;String&gt; parentShas = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">					if (parents != null) {</span>
+<span class="nc bnc" id="L145" title="All 2 branches missed.">						for (Object parentObj : parents) {</span>
+<span class="nc" id="L146">							parentShas.add(str((JSONObject)parentObj, &quot;sha&quot;));</span>
+<span class="nc" id="L147">						}</span>
+					}
+                    
+<span class="nc" id="L150">					Commit commit = new Commit();</span>
+<span class="nc" id="L151">					commit.setTimestamp(System.currentTimeMillis());</span>
+<span class="nc" id="L152">					commit.setScmUrl(repo.getRepoUrl());</span>
+<span class="nc" id="L153">                    commit.setScmBranch(repo.getBranch());</span>
+<span class="nc" id="L154">					commit.setScmRevisionNumber(sha);</span>
+<span class="nc" id="L155">					commit.setScmParentRevisionNumbers(parentShas);</span>
+<span class="nc" id="L156">					commit.setScmAuthor(author);</span>
+<span class="nc" id="L157">					commit.setScmCommitLog(message);</span>
+<span class="nc" id="L158">					commit.setScmCommitTimestamp(timestamp);</span>
+<span class="nc" id="L159">					commit.setNumberOfChanges(1);</span>
+<span class="nc" id="L160">                    commit.setType(getCommitType(CollectionUtils.size(parents), message));</span>
+<span class="nc" id="L161">					commits.add(commit);</span>
+<span class="nc" id="L162">				}</span>
+<span class="nc bnc" id="L163" title="All 2 branches missed.">				if (CollectionUtils.isEmpty(jsonArray)) {</span>
+<span class="nc" id="L164">					lastPage = true;</span>
+				} else {
+<span class="nc" id="L166">					lastPage = isThisLastPage(response);</span>
+<span class="nc" id="L167">					pageNumber++;</span>
+<span class="nc" id="L168">					queryUrlPage = queryUrl + &quot;&amp;page=&quot; + pageNumber;</span>
+				}
+
+<span class="nc" id="L171">			} catch (RestClientException re) {</span>
+<span class="nc" id="L172">				LOG.error(re.getMessage() + &quot;:&quot; + queryUrl);</span>
+<span class="nc" id="L173">				lastPage = true;</span>
+
+<span class="nc" id="L175">			}</span>
+		}
+<span class="nc" id="L177">		return commits;</span>
+	}
+
+	private CommitType getCommitType (int parentSize, String commitMessage ) {
+<span class="nc bnc" id="L181" title="All 2 branches missed.">	    if (parentSize &gt; 1) return CommitType.Merge;</span>
+<span class="nc bnc" id="L182" title="All 2 branches missed.">        if (settings.getNotBuiltCommits() == null) return CommitType.New;</span>
+<span class="nc bnc" id="L183" title="All 2 branches missed.">        for (String s : settings.getNotBuiltCommits()) {</span>
+<span class="nc bnc" id="L184" title="All 2 branches missed.">            if (commitMessage.contains(s)) {</span>
+<span class="nc" id="L185">                return CommitType.NotBuilt;</span>
+            }
+        }
+<span class="nc" id="L188">        return CommitType.New;</span>
+    }
+
+	private Date getDate(Date dateInstance, int offsetDays, int offsetMinutes) {
+<span class="nc" id="L192">		Calendar cal = Calendar.getInstance();</span>
+<span class="nc" id="L193">		cal.setTime(dateInstance);</span>
+<span class="nc" id="L194">		cal.add(Calendar.DATE, offsetDays);</span>
+<span class="nc" id="L195">		cal.add(Calendar.MINUTE, offsetMinutes);</span>
+<span class="nc" id="L196">		return cal.getTime();</span>
+	}
+
+	private boolean isThisLastPage(ResponseEntity&lt;String&gt; response) {
+<span class="nc" id="L200">		HttpHeaders header = response.getHeaders();</span>
+<span class="nc" id="L201">		List&lt;String&gt; link = header.get(&quot;Link&quot;);</span>
+<span class="nc bnc" id="L202" title="All 4 branches missed.">		if (link == null || link.isEmpty()) {</span>
+<span class="nc" id="L203">			return true;</span>
+		} else {
+<span class="nc bnc" id="L205" title="All 2 branches missed.">			for (String l : link) {</span>
+<span class="nc bnc" id="L206" title="All 2 branches missed.">				if (l.contains(&quot;rel=\&quot;next\&quot;&quot;)) {</span>
+<span class="nc" id="L207">					return false;</span>
+				}
+
+<span class="nc" id="L210">			}</span>
+		}
+<span class="nc" id="L212">		return true;</span>
+	}
+
+	private ResponseEntity&lt;String&gt; makeRestCall(String url, String userId,
+			String password) {
+		// Basic Auth only.
+<span class="nc bnc" id="L218" title="All 4 branches missed.">		if (!&quot;&quot;.equals(userId) &amp;&amp; !&quot;&quot;.equals(password)) {</span>
+<span class="nc" id="L219">			return restOperations.exchange(url, HttpMethod.GET,</span>
+<span class="nc" id="L220">					new HttpEntity&lt;&gt;(createHeaders(userId, password)),</span>
+					String.class);
+
+		} else {
+<span class="nc" id="L224">			return restOperations.exchange(url, HttpMethod.GET, null,</span>
+					String.class);
+		}
+
+	}
+
+	private HttpHeaders createHeaders(final String userId, final String password) {
+<span class="nc" id="L231">		String auth = userId + &quot;:&quot; + password;</span>
+<span class="nc" id="L232">		byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.US_ASCII));</span>
+<span class="nc" id="L233">		String authHeader = &quot;Basic &quot; + new String(encodedAuth);</span>
+
+<span class="nc" id="L235">		HttpHeaders headers = new HttpHeaders();</span>
+<span class="nc" id="L236">		headers.set(&quot;Authorization&quot;, authHeader);</span>
+<span class="nc" id="L237">		return headers;</span>
+	}
+
+	private JSONArray paresAsArray(ResponseEntity&lt;String&gt; response) {
+		try {
+<span class="nc" id="L242">			return (JSONArray) new JSONParser().parse(response.getBody());</span>
+<span class="nc" id="L243">		} catch (ParseException pe) {</span>
+<span class="nc" id="L244">			LOG.error(pe.getMessage());</span>
+		}
+<span class="nc" id="L246">		return new JSONArray();</span>
+	}
+
+	private String str(JSONObject json, String key) {
+<span class="nc" id="L250">		Object value = json.get(key);</span>
+<span class="nc bnc" id="L251" title="All 2 branches missed.">		return value == null ? null : value.toString();</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

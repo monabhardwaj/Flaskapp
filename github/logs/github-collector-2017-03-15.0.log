@@ -1,0 +1,6 @@
+2017-03-15 14:19:37,360 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-03-15 14:19:37,364 INFO  c.c.d.collector.CollectorTask - Starting...
+2017-03-15 14:19:37,364 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-03-15 14:19:37,371 INFO  c.c.d.collector.CollectorTask - Repo Count              1        0s
+2017-03-15 14:19:37,371 INFO  c.c.d.collector.CollectorTask - New Commits             1        0s
+2017-03-15 14:19:37,371 INFO  c.c.d.collector.CollectorTask - Finished                         0s

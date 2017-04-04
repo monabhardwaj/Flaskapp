@@ -1,0 +1,603 @@
+2017-04-04 11:13:51,228 INFO  com.capitalone.dashboard.Application - Starting Application on BHARDWAM7 with PID 8672 (C:\Hygieia-master\collectors\scm\github\target\classes started by bhardwam in C:\Hygieia-master\collectors\scm\github\target)
+2017-04-04 11:13:51,235 DEBUG o.s.boot.SpringApplication - Loading source class com.capitalone.dashboard.Application
+2017-04-04 11:13:51,360 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Loaded config file 'file:dashboard.properties'
+2017-04-04 11:13:51,361 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./config/github.xml' resource not found
+2017-04-04 11:13:51,361 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./config/github.yml' resource not found
+2017-04-04 11:13:51,361 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./config/github.properties' resource not found
+2017-04-04 11:13:51,362 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./config/github.yaml' resource not found
+2017-04-04 11:13:51,362 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./github.xml' resource not found
+2017-04-04 11:13:51,363 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./github.yml' resource not found
+2017-04-04 11:13:51,363 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./github.properties' resource not found
+2017-04-04 11:13:51,363 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./github.yaml' resource not found
+2017-04-04 11:13:51,363 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/config/github.xml' resource not found
+2017-04-04 11:13:51,364 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/config/github.yml' resource not found
+2017-04-04 11:13:51,364 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/config/github.properties' resource not found
+2017-04-04 11:13:51,364 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/config/github.yaml' resource not found
+2017-04-04 11:13:51,365 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/github.xml' resource not found
+2017-04-04 11:13:51,365 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/github.yml' resource not found
+2017-04-04 11:13:51,365 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/github.properties' resource not found
+2017-04-04 11:13:51,366 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/github.yaml' resource not found
+2017-04-04 11:13:51,368 INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6253c26: startup date [Tue Apr 04 11:13:51 IST 2017]; root of context hierarchy
+2017-04-04 11:13:59,456 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Post-processing PropertySource instances
+2017-04-04 11:13:59,553 INFO  c.u.j.c.StringEncryptorConfiguration - String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing String Encryptor based on properties with name 'jasyptStringEncryptor'
+2017-04-04 11:13:59,569 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource commandLineArgs [org.springframework.core.env.SimpleCommandLinePropertySource] to EncryptableEnumerablePropertySourceWrapper
+2017-04-04 11:13:59,571 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:13:59,572 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource systemEnvironment [org.springframework.core.env.SystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:13:59,573 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource random [org.springframework.boot.context.config.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2017-04-04 11:13:59,574 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource applicationConfig: [file:dashboard.properties] [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:13:59,621 INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-04 11:13:59,798 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2017-04-04 11:14:53,443 INFO  c.c.d.collector.DefaultGitHubClient - Trace Log For DefaultGitHub Client
+2017-04-04 11:15:32,097 INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-04-04 11:15:32,400 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 11:15:32,403 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 11:15:33,200 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 11:15:33,435 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@83658b5, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@50fb33a, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@2cae9b8, socketFactory=javax.net.DefaultSocketFactory@1457fde, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 11:15:36,951 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+2017-04-04 11:15:36,954 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=1546565}
+2017-04-04 11:34:42,355 INFO  com.capitalone.dashboard.Application - Starting Application on BHARDWAM7 with PID 9824 (C:\Hygieia-master\collectors\scm\github\target\classes started by bhardwam in C:\Hygieia-master\collectors\scm\github\target)
+2017-04-04 11:34:42,357 DEBUG o.s.boot.SpringApplication - Loading source class com.capitalone.dashboard.Application
+2017-04-04 11:34:42,379 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Loaded config file 'file:dashboard.properties'
+2017-04-04 11:34:42,379 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./config/github.xml' resource not found
+2017-04-04 11:34:42,379 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./config/github.yml' resource not found
+2017-04-04 11:34:42,379 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./config/github.properties' resource not found
+2017-04-04 11:34:42,379 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./config/github.yaml' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./github.xml' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./github.yml' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./github.properties' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'file:./github.yaml' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/config/github.xml' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/config/github.yml' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/config/github.properties' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/config/github.yaml' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/github.xml' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/github.yml' resource not found
+2017-04-04 11:34:42,380 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/github.properties' resource not found
+2017-04-04 11:34:42,381 DEBUG o.s.b.c.c.ConfigFileApplicationListener - Skipped config file 'classpath:/github.yaml' resource not found
+2017-04-04 11:34:42,381 INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@641147d0: startup date [Tue Apr 04 11:34:42 IST 2017]; root of context hierarchy
+2017-04-04 11:34:43,255 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Post-processing PropertySource instances
+2017-04-04 11:34:43,270 INFO  c.u.j.c.StringEncryptorConfiguration - String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing String Encryptor based on properties with name 'jasyptStringEncryptor'
+2017-04-04 11:34:43,273 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource commandLineArgs [org.springframework.core.env.SimpleCommandLinePropertySource] to EncryptableEnumerablePropertySourceWrapper
+2017-04-04 11:34:43,274 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:34:43,274 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource systemEnvironment [org.springframework.core.env.SystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:34:43,274 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource random [org.springframework.boot.context.config.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2017-04-04 11:34:43,274 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource applicationConfig: [file:dashboard.properties] [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:34:43,277 INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-04 11:34:43,311 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2017-04-04 11:34:43,430 INFO  c.c.d.collector.DefaultGitHubClient - Trace Log For DefaultGitHub Client
+2017-04-04 11:34:44,277 INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-04-04 11:34:44,391 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 11:34:44,392 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 11:34:44,970 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 11:34:45,013 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@2dd124b3, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@28c0b664, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@2c444798, socketFactory=javax.net.DefaultSocketFactory@1af7f54a, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 11:34:45,107 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2017-04-04 11:34:45,109 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=624157}
+2017-04-04 11:34:45,375 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:3}] to localhost:27017
+2017-04-04 11:34:45,600 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 11:34:45,601 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 11:34:45,601 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 11:34:45,602 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@2dd124b3, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@28c0b664, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@2c444798, socketFactory=javax.net.DefaultSocketFactory@1af7f54a, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 11:34:45,610 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 11:34:45,610 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 11:34:45,611 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 11:34:45,612 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@2dd124b3, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@28c0b664, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@2c444798, socketFactory=javax.net.DefaultSocketFactory@1af7f54a, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 11:34:45,622 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:4}] to localhost:27017
+2017-04-04 11:34:45,623 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=411627}
+2017-04-04 11:34:45,631 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:5}] to localhost:27017
+2017-04-04 11:34:45,631 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=436515}
+2017-04-04 11:34:45,853 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 11:34:45,854 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 11:34:45,854 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 11:34:45,855 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@2dd124b3, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@28c0b664, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@2c444798, socketFactory=javax.net.DefaultSocketFactory@1af7f54a, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 11:34:45,876 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:6}] to localhost:27017
+2017-04-04 11:34:45,876 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=325510}
+2017-04-04 11:34:46,247 INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-04-04 11:34:46,254 DEBUG o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+
+=========================
+AUTO-CONFIGURATION REPORT
+=========================
+
+
+Positive matches:
+-----------------
+
+   HttpMessageConvertersAutoConfiguration
+      - @ConditionalOnClass classes found: org.springframework.http.converter.HttpMessageConverter (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration#messageConverters
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.HttpMessageConverters; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration
+      - @ConditionalOnClass classes found: org.springframework.http.converter.StringHttpMessageConverter (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConverter
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   JmxAutoConfiguration
+      - @ConditionalOnClass classes found: org.springframework.jmx.export.MBeanExporter (OnClassCondition)
+      - matched (OnPropertyCondition)
+
+   JmxAutoConfiguration#mbeanExporter
+      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.MBeanExporter; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   JmxAutoConfiguration#mbeanServer
+      - @ConditionalOnMissingBean (types: javax.management.MBeanServer; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   JmxAutoConfiguration#objectNamingStrategy
+      - @ConditionalOnMissingBean (types: org.springframework.jmx.export.naming.ObjectNamingStrategy; SearchStrategy: current) found no beans (OnBeanCondition)
+
+   MongoDataAutoConfiguration
+      - @ConditionalOnClass classes found: com.mongodb.Mongo,org.springframework.data.mongodb.core.MongoTemplate (OnClassCondition)
+
+   MongoDataAutoConfiguration#gridFsTemplate
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.gridfs.GridFsTemplate; SearchStrategy: all) found no beans (OnBeanCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration
+      - @ConditionalOnClass classes found: org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor (OnClassCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration#persistenceExceptionTranslationPostProcessor
+      - @ConditionalOnMissingBean (types: org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor; SearchStrategy: all) found no beans (OnBeanCondition)
+      - matched (OnPropertyCondition)
+
+
+Negative matches:
+-----------------
+
+   ActiveMQAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.jms.ConnectionFactory,org.apache.activemq.ActiveMQConnectionFactory (OnClassCondition)
+
+   AopAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.aspectj.lang.annotation.Aspect,org.aspectj.lang.reflect.Advice (OnClassCondition)
+
+   BatchAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.batch.core.launch.JobLauncher,org.springframework.jdbc.core.JdbcOperations (OnClassCondition)
+
+   CloudAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.cloud.config.java.CloudScanConfiguration (OnClassCondition)
+
+   DataSourceAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jdbc.core.JdbcTemplate (OnClassCondition)
+
+   DeviceDelegatingViewResolverAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolver (OnClassCondition)
+
+   DeviceResolverAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.DeviceResolverHandlerInterceptor,org.springframework.mobile.device.DeviceHandlerMethodArgumentResolver (OnClassCondition)
+
+   DispatcherServletAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.web.servlet.DispatcherServlet (OnClassCondition)
+
+   ElasticsearchAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.client.TransportClientFactoryBean,org.springframework.data.elasticsearch.client.NodeClientFactoryBean (OnClassCondition)
+
+   ElasticsearchDataAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.core.ElasticsearchTemplate (OnClassCondition)
+
+   ElasticsearchRepositoriesAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.elasticsearch.client.Client,org.springframework.data.elasticsearch.repository.ElasticsearchRepository (OnClassCondition)
+
+   EmbeddedServletContainerAutoConfiguration
+      - not a web application (OnWebApplicationCondition)
+
+   ErrorMvcAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet (OnClassCondition)
+
+   FacebookAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.facebook.connect.FacebookConnectionFactory (OnClassCondition)
+
+   FallbackWebSecurityAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.security.config.annotation.web.configuration.EnableWebSecurity (OnClassCondition)
+
+   FlywayAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.flywaydb.core.Flyway (OnClassCondition)
+
+   FreeMarkerAutoConfiguration
+      - required @ConditionalOnClass classes not found: freemarker.template.Configuration,org.springframework.ui.freemarker.FreeMarkerConfigurationFactory (OnClassCondition)
+
+   GroovyTemplateAutoConfiguration
+      - required @ConditionalOnClass classes not found: groovy.text.markup.MarkupTemplateEngine (OnClassCondition)
+
+   GsonAutoConfiguration
+      - required @ConditionalOnClass classes not found: com.google.gson.Gson (OnClassCondition)
+
+   GsonHttpMessageConvertersConfiguration
+      - required @ConditionalOnClass classes not found: com.google.gson.Gson (OnClassCondition)
+
+   GzipFilterAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.eclipse.jetty.servlets.GzipFilter (OnClassCondition)
+
+   HibernateJpaAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,javax.persistence.EntityManager (OnClassCondition)
+
+   HornetQAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.jms.ConnectionFactory,org.hornetq.api.jms.HornetQJMSClient (OnClassCondition)
+
+   HttpEncodingAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.web.filter.CharacterEncodingFilter (OnClassCondition)
+
+   HypermediaAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.hateoas.Resource,org.springframework.plugin.core.Plugin (OnClassCondition)
+
+   IntegrationAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.integration.config.EnableIntegration (OnClassCondition)
+
+   JacksonAutoConfiguration
+      - required @ConditionalOnClass classes not found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration
+      - required @ConditionalOnClass classes not found: com.fasterxml.jackson.databind.ObjectMapper (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2XmlHttpMessageConverterConfiguration
+      - required @ConditionalOnClass classes not found: com.fasterxml.jackson.dataformat.xml.XmlMapper (OnClassCondition)
+
+   JerseyAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.glassfish.jersey.server.spring.SpringComponentProvider,javax.servlet.ServletRegistration (OnClassCondition)
+
+   JmsAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jms.core.JmsTemplate (OnClassCondition)
+
+   JndiConnectionFactoryAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jms.core.JmsTemplate (OnClassCondition)
+
+   JndiDataSourceAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType (OnClassCondition)
+
+   JpaRepositoriesAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.data.jpa.repository.JpaRepository (OnClassCondition)
+
+   JtaAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.transaction.Transaction (OnClassCondition)
+
+   LinkedInAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.linkedin.connect.LinkedInConnectionFactory (OnClassCondition)
+
+   LiquibaseAutoConfiguration
+      - required @ConditionalOnClass classes not found: liquibase.integration.spring.SpringLiquibase (OnClassCondition)
+
+   MailSenderAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.mail.internet.MimeMessage (OnClassCondition)
+
+   MessageSourceAutoConfiguration
+      - No bundle found for spring.messages.basename: messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   MongoAutoConfiguration
+      - @ConditionalOnClass classes found: com.mongodb.Mongo (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.MongoDbFactory; SearchStrategy: all) found the following [mongoDbFactory] (OnBeanCondition)
+
+   MongoDataAutoConfiguration#mappingMongoConverter
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.core.convert.MongoConverter; SearchStrategy: all) found the following [mappingMongoConverter] (OnBeanCondition)
+
+   MongoDataAutoConfiguration#mongoDbFactory
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.MongoDbFactory; SearchStrategy: all) found the following [mongoDbFactory] (OnBeanCondition)
+
+   MongoDataAutoConfiguration#mongoMappingContext
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.core.mapping.MongoMappingContext; SearchStrategy: all) found the following [mongoMappingContext] (OnBeanCondition)
+
+   MongoDataAutoConfiguration#mongoTemplate
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.core.MongoTemplate; SearchStrategy: all) found the following [mongoTemplate] (OnBeanCondition)
+
+   MongoRepositoriesAutoConfiguration
+      - @ConditionalOnClass classes found: com.mongodb.Mongo,org.springframework.data.mongodb.repository.MongoRepository (OnClassCondition)
+      - matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean,org.springframework.data.mongodb.repository.config.MongoRepositoryConfigurationExtension; SearchStrategy: all) found the following [&scopeRepository, &codeQualityRepository, &scopeOwnerRepository, &pipelineRepository, &testResultRepository, &authenticationRepository, &environmentStatusRepository, &requestLogRepository, &collectorItemRepository, &componentRepository, &cloudVolumeRepository, &serviceRepository, &buildRepository, &jobRepository, &baseCollectorRepository, &cloudVirtualNetworkRepository, &cloudInstanceHistoryRepository, &cloudInstanceRepository, &baseCollectorItemRepository, &binaryArtifactRepository, &commitRepository, &environmentComponentRepository, &teamRepository, &featureRepository, &cloudSubNetworkRepository, &gitHubRepoRepository, &collectorRepository, &dashboardRepository, org.springframework.data.mongodb.repository.config.MongoRepositoryConfigurationExtension#0] (OnBeanCondition)
+
+   MultipartAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.servlet.Servlet,javax.servlet.MultipartConfigElement (OnClassCondition)
+
+   MustacheAutoConfiguration
+      - required @ConditionalOnClass classes not found: com.samskivert.mustache.Mustache (OnClassCondition)
+
+   PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer
+      - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) found the following [propertySourcesPlaceholderConfigurer] (OnBeanCondition)
+
+   RabbitAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.amqp.rabbit.core.RabbitTemplate,com.rabbitmq.client.Channel (OnClassCondition)
+
+   ReactorAutoConfiguration
+      - required @ConditionalOnClass classes not found: reactor.spring.context.config.EnableReactor,reactor.core.Environment (OnClassCondition)
+
+   RedisAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.data.redis.connection.jedis.JedisConnection,org.springframework.data.redis.core.RedisOperations,redis.clients.jedis.Jedis (OnClassCondition)
+
+   RepositoryRestMvcAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration (OnClassCondition)
+
+   SecurityAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.config.annotation.authentication.configurers.GlobalAuthenticationConfigurerAdapter (OnClassCondition)
+
+   ServerPropertiesAutoConfiguration
+      - not a web application (OnWebApplicationCondition)
+
+   SitePreferenceAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.mobile.device.site.SitePreferenceHandlerInterceptor,org.springframework.mobile.device.site.SitePreferenceHandlerMethodArgumentResolver (OnClassCondition)
+
+   SocialWebAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.connect.web.ConnectController,org.springframework.social.config.annotation.SocialConfigurerAdapter (OnClassCondition)
+
+   SolrAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.apache.solr.client.solrj.impl.HttpSolrServer,org.apache.solr.client.solrj.impl.CloudSolrServer (OnClassCondition)
+
+   SolrRepositoriesAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.apache.solr.client.solrj.SolrServer,org.springframework.data.solr.repository.SolrRepository (OnClassCondition)
+
+   SpringDataWebAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter (OnClassCondition)
+
+   ThymeleafAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.thymeleaf.spring4.SpringTemplateEngine (OnClassCondition)
+
+   TwitterAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.springframework.social.config.annotation.SocialConfigurerAdapter,org.springframework.social.twitter.connect.TwitterConnectionFactory (OnClassCondition)
+
+   VelocityAutoConfiguration
+      - required @ConditionalOnClass classes not found: org.apache.velocity.app.VelocityEngine,org.springframework.ui.velocity.VelocityEngineFactory (OnClassCondition)
+
+   WebMvcAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.servlet.Servlet,org.springframework.web.servlet.DispatcherServlet,org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter (OnClassCondition)
+
+   WebSocketAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.servlet.Servlet,javax.websocket.server.ServerContainer (OnClassCondition)
+
+   XADataSourceAutoConfiguration
+      - required @ConditionalOnClass classes not found: javax.transaction.TransactionManager,org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType (OnClassCondition)
+
+
+
+2017-04-04 11:34:46,257 INFO  com.capitalone.dashboard.Application - Started Application in 4.053 seconds (JVM running for 4.504)
+2017-04-04 11:35:00,002 INFO  c.c.d.collector.CollectorTask - Running Collector: GitHub
+2017-04-04 11:35:00,002 INFO  c.c.d.collector.CollectorTask - iNFO ABOUT TRACEBACK
+2017-04-04 11:35:00,010 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:35:00,010 INFO  c.c.d.collector.CollectorTask - Starting...
+2017-04-04 11:35:00,011 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:35:00,052 INFO  c.c.d.collector.CollectorTask - Repo Count              0        0s
+2017-04-04 11:35:00,052 INFO  c.c.d.collector.CollectorTask - New Commits             0        0s
+2017-04-04 11:35:00,052 INFO  c.c.d.collector.CollectorTask - Finished                         0s
+2017-04-04 11:40:00,025 INFO  c.c.d.collector.CollectorTask - Running Collector: GitHub
+2017-04-04 11:40:00,026 INFO  c.c.d.collector.CollectorTask - iNFO ABOUT TRACEBACK
+2017-04-04 11:40:00,032 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:40:00,033 INFO  c.c.d.collector.CollectorTask - Starting...
+2017-04-04 11:40:00,034 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:40:00,044 INFO  c.c.d.collector.CollectorTask - Repo Count              0        0s
+2017-04-04 11:40:00,045 INFO  c.c.d.collector.CollectorTask - New Commits             0        0s
+2017-04-04 11:40:00,046 INFO  c.c.d.collector.CollectorTask - Finished                         0s
+2017-04-04 11:45:00,021 INFO  c.c.d.collector.CollectorTask - Running Collector: GitHub
+2017-04-04 11:45:00,022 INFO  c.c.d.collector.CollectorTask - iNFO ABOUT TRACEBACK
+2017-04-04 11:45:00,028 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:45:00,028 INFO  c.c.d.collector.CollectorTask - Starting...
+2017-04-04 11:45:00,028 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:45:00,036 INFO  c.c.d.collector.CollectorTask - Repo Count              0        0s
+2017-04-04 11:45:00,036 INFO  c.c.d.collector.CollectorTask - New Commits             0        0s
+2017-04-04 11:45:00,037 INFO  c.c.d.collector.CollectorTask - Finished                         0s
+2017-04-04 11:49:15,596 INFO  com.capitalone.dashboard.Application - Starting Application v2.0.5-SNAPSHOT on BHARDWAM7 with PID 704 (C:\Hygieia-master\collectors\scm\github\target\github-scm-collector-2.0.5-SNAPSHOT.jar started by bhardwam in C:\Hygieia-master\collectors\scm\github\target)
+2017-04-04 11:49:15,646 INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3b0f0f1e: startup date [Tue Apr 04 11:49:15 IST 2017]; root of context hierarchy
+2017-04-04 11:49:16,711 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Post-processing PropertySource instances
+2017-04-04 11:49:16,735 INFO  c.u.j.c.StringEncryptorConfiguration - String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing String Encryptor based on properties with name 'jasyptStringEncryptor'
+2017-04-04 11:49:16,744 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:49:16,744 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource systemEnvironment [org.springframework.core.env.SystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:49:16,746 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource random [org.springframework.boot.context.config.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2017-04-04 11:49:16,761 INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-04 11:49:16,827 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2017-04-04 11:49:18,012 INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-04-04 11:49:18,238 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 11:49:18,242 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 11:49:18,840 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 11:49:18,904 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@8910d3a9, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@3376346, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@7f3b7433, socketFactory=javax.net.DefaultSocketFactory@33399a3d, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 11:49:18,955 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:14}] to localhost:27017
+2017-04-04 11:49:18,956 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=512757}
+2017-04-04 11:49:19,272 WARN  o.s.c.a.AnnotationConfigApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gitHubCollectorTask': Invocation of init method failed; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:136) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:686) [spring-boot-1.2.5.RELEASE.jar!/:1.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320) [spring-boot-1.2.5.RELEASE.jar!/:1.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:957) [spring-boot-1.2.5.RELEASE.jar!/:1.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:946) [spring-boot-1.2.5.RELEASE.jar!/:1.2.5.RELEASE]
+	at com.capitalone.dashboard.Application.main(Application.java:13) [github-scm-collector-2.0.5-SNAPSHOT.jar!/:2.0.5-SNAPSHOT]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:53) [github-scm-collector-2.0.5-SNAPSHOT.jar!/:2.0.5-SNAPSHOT]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+Caused by: java.lang.NullPointerException: null
+	at org.springframework.scheduling.support.CronSequenceGenerator.parse(CronSequenceGenerator.java:265) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:95) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:82) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.scheduling.support.CronTrigger.<init>(CronTrigger.java:44) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at com.capitalone.dashboard.collector.CollectorTask.onStartup(CollectorTask.java:73) ~[core-2.0.5-SNAPSHOT.jar!/:2.0.5-SNAPSHOT]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:349) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:300) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	... 22 common frames omitted
+2017-04-04 11:49:19,302 INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2017-04-04 11:49:19,306 INFO  o.s.b.l.ClasspathLoggingApplicationListener - Application failed to start with classpath: [jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/commons-lang3-3.3.2.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/httpclient-4.3.6.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/httpcore-4.3.3.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/core-2.0.5-SNAPSHOT.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-boot-1.2.5.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-test-4.1.7.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-data-mongodb-1.8.0.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-expression-4.1.7.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-data-commons-1.11.0.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/slf4j-api-1.7.12.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/jcl-over-slf4j-1.7.12.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/querydsl-jpa-3.6.0.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/querydsl-core-3.6.0.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/guava-18.0.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/jsr305-1.3.9.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/mysema-commons-lang-0.2.4.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/bridge-method-annotation-1.13.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/querydsl-apt-3.6.0.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/querydsl-codegen-3.6.0.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/codegen-0.6.5.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/ecj-4.3.1.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/javax.inject-1.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/querydsl-mongodb-3.6.0.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/jasypt-spring-boot-starter-1.9.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/jasypt-spring-boot-1.9.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/jasypt-1.9.2.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/validation-api-1.1.0.Final.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/hibernate-validator-5.1.3.Final.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/jboss-logging-3.1.3.GA.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/classmate-1.0.0.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/javax.el-api-2.2.4.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/commons-beanutils-1.9.2.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/commons-collections-3.2.1.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/json-simple-1.1.1.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/junit-4.12.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/commons-codec-1.9.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/joda-time-2.7.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/joda-convert-1.8.1.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-web-4.1.7.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-aop-4.1.7.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/aopalliance-1.0.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-beans-4.1.7.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-context-4.1.7.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-core-4.1.7.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-boot-starter-data-mongodb-1.2.5.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-boot-starter-1.2.5.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-boot-autoconfigure-1.2.5.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-boot-starter-logging-1.2.5.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/jul-to-slf4j-1.7.12.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/log4j-over-slf4j-1.7.12.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/logback-classic-1.1.3.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/logback-core-1.1.3.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/snakeyaml-1.14.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/mongo-java-driver-3.0.2.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/spring-tx-4.1.7.RELEASE.jar!/, jar:file:/C:/Hygieia-master/collectors/scm/github/target/github-scm-collector-2.0.5-SNAPSHOT.jar!/lib/hamcrest-core-1.3.jar!/]
+2017-04-04 11:49:19,335 INFO  o.s.b.a.l.AutoConfigurationReportLoggingInitializer - 
+
+Error starting ApplicationContext. To display the auto-configuration report enable debug logging (start with --debug)
+
+
+2017-04-04 11:49:19,338 ERROR o.s.boot.SpringApplication - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gitHubCollectorTask': Invocation of init method failed; nested exception is java.lang.NullPointerException
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:136) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:408) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:686) [spring-boot-1.2.5.RELEASE.jar!/:1.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320) [spring-boot-1.2.5.RELEASE.jar!/:1.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:957) [spring-boot-1.2.5.RELEASE.jar!/:1.2.5.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:946) [spring-boot-1.2.5.RELEASE.jar!/:1.2.5.RELEASE]
+	at com.capitalone.dashboard.Application.main(Application.java:13) [github-scm-collector-2.0.5-SNAPSHOT.jar!/:2.0.5-SNAPSHOT]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:53) [github-scm-collector-2.0.5-SNAPSHOT.jar!/:2.0.5-SNAPSHOT]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+Caused by: java.lang.NullPointerException: null
+	at org.springframework.scheduling.support.CronSequenceGenerator.parse(CronSequenceGenerator.java:265) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:95) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.scheduling.support.CronSequenceGenerator.<init>(CronSequenceGenerator.java:82) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.scheduling.support.CronTrigger.<init>(CronTrigger.java:44) ~[spring-context-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at com.capitalone.dashboard.collector.CollectorTask.onStartup(CollectorTask.java:73) ~[core-2.0.5-SNAPSHOT.jar!/:2.0.5-SNAPSHOT]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:349) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:300) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133) ~[spring-beans-4.1.7.RELEASE.jar!/:4.1.7.RELEASE]
+	... 22 common frames omitted
+2017-04-04 11:50:00,021 INFO  c.c.d.collector.CollectorTask - Running Collector: GitHub
+2017-04-04 11:50:00,021 INFO  c.c.d.collector.CollectorTask - iNFO ABOUT TRACEBACK
+2017-04-04 11:50:00,024 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:50:00,024 INFO  c.c.d.collector.CollectorTask - Starting...
+2017-04-04 11:50:00,024 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:50:00,028 INFO  c.c.d.collector.CollectorTask - Repo Count              0        0s
+2017-04-04 11:50:00,028 INFO  c.c.d.collector.CollectorTask - New Commits             0        0s
+2017-04-04 11:50:00,028 INFO  c.c.d.collector.CollectorTask - Finished                         0s
+2017-04-04 11:52:17,241 INFO  com.capitalone.dashboard.Application - Starting Application v2.0.5-SNAPSHOT on BHARDWAM7 with PID 9520 (C:\Hygieia-master\collectors\scm\github\target\github-scm-collector-2.0.5-SNAPSHOT.jar started by bhardwam in C:\Hygieia-master\collectors\scm\github\target)
+2017-04-04 11:52:17,285 INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@537f44f1: startup date [Tue Apr 04 11:52:17 IST 2017]; root of context hierarchy
+2017-04-04 11:52:18,211 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Post-processing PropertySource instances
+2017-04-04 11:52:18,236 INFO  c.u.j.c.StringEncryptorConfiguration - String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing String Encryptor based on properties with name 'jasyptStringEncryptor'
+2017-04-04 11:52:18,245 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource commandLineArgs [org.springframework.core.env.SimpleCommandLinePropertySource] to EncryptableEnumerablePropertySourceWrapper
+2017-04-04 11:52:18,245 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:52:18,246 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource systemEnvironment [org.springframework.core.env.SystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:52:18,252 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource random [org.springframework.boot.context.config.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2017-04-04 11:52:18,256 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource applicationConfig: [file:dashboard.properties] [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:52:18,272 INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-04 11:52:18,335 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2017-04-04 11:52:19,469 INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-04-04 11:52:19,660 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 11:52:19,663 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 11:52:20,272 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 11:52:20,331 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@c8ed842f, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@28cb9e91, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@2c628222, socketFactory=javax.net.DefaultSocketFactory@217669b5, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 11:52:20,519 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:15}] to localhost:27017
+2017-04-04 11:52:20,523 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=698819}
+2017-04-04 11:52:20,766 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:16}] to localhost:27017
+2017-04-04 11:52:20,991 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 11:52:20,992 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 11:52:20,994 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 11:52:21,000 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@c8ed842f, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@28cb9e91, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@2c628222, socketFactory=javax.net.DefaultSocketFactory@217669b5, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 11:52:21,021 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 11:52:21,021 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 11:52:21,023 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 11:52:21,031 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:17}] to localhost:27017
+2017-04-04 11:52:21,031 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@c8ed842f, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@28cb9e91, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@2c628222, socketFactory=javax.net.DefaultSocketFactory@217669b5, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 11:52:21,036 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=1953452}
+2017-04-04 11:52:21,063 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:18}] to localhost:27017
+2017-04-04 11:52:21,065 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=1509037}
+2017-04-04 11:52:21,301 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 11:52:21,301 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 11:52:21,303 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 11:52:21,311 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@c8ed842f, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@28cb9e91, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@2c628222, socketFactory=javax.net.DefaultSocketFactory@217669b5, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 11:52:21,340 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:19}] to localhost:27017
+2017-04-04 11:52:21,341 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=488264}
+2017-04-04 11:52:21,727 INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-04-04 11:52:21,746 INFO  com.capitalone.dashboard.Application - Started Application in 4.722 seconds (JVM running for 5.407)
+2017-04-04 11:55:00,033 INFO  c.c.d.collector.CollectorTask - Running Collector: GitHub
+2017-04-04 11:55:00,039 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:55:00,040 INFO  c.c.d.collector.CollectorTask - Starting...
+2017-04-04 11:55:00,042 INFO  c.c.d.collector.CollectorTask - Running Collector: GitHub
+2017-04-04 11:55:00,042 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:55:00,043 INFO  c.c.d.collector.CollectorTask - iNFO ABOUT TRACEBACK
+2017-04-04 11:55:00,049 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:55:00,050 INFO  c.c.d.collector.CollectorTask - Starting...
+2017-04-04 11:55:00,050 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 11:55:00,060 INFO  c.c.d.collector.CollectorTask - Repo Count              0        0s
+2017-04-04 11:55:00,060 INFO  c.c.d.collector.CollectorTask - New Commits             0        0s
+2017-04-04 11:55:00,060 INFO  c.c.d.collector.CollectorTask - Finished                         0s
+2017-04-04 11:55:00,090 INFO  c.c.d.collector.CollectorTask - Repo Count              0        0s
+2017-04-04 11:55:00,091 INFO  c.c.d.collector.CollectorTask - New Commits             0        0s
+2017-04-04 11:55:00,092 INFO  c.c.d.collector.CollectorTask - Finished                         0s
+2017-04-04 11:59:48,055 INFO  o.s.c.a.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@537f44f1: startup date [Tue Apr 04 11:52:17 IST 2017]; root of context hierarchy
+2017-04-04 11:59:48,060 INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-04-04 11:59:48,082 INFO  o.s.s.c.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2017-04-04 11:59:57,907 INFO  com.capitalone.dashboard.Application - Starting Application v2.0.5-SNAPSHOT on BHARDWAM7 with PID 9056 (C:\Hygieia-master\collectors\scm\github\target\github-scm-collector-2.0.5-SNAPSHOT.jar started by bhardwam in C:\Hygieia-master\collectors\scm\github\target)
+2017-04-04 11:59:57,951 INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3b4af26f: startup date [Tue Apr 04 11:59:57 IST 2017]; root of context hierarchy
+2017-04-04 11:59:58,911 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Post-processing PropertySource instances
+2017-04-04 11:59:58,934 INFO  c.u.j.c.StringEncryptorConfiguration - String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing String Encryptor based on properties with name 'jasyptStringEncryptor'
+2017-04-04 11:59:58,943 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource commandLineArgs [org.springframework.core.env.SimpleCommandLinePropertySource] to EncryptableEnumerablePropertySourceWrapper
+2017-04-04 11:59:58,943 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:59:58,944 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource systemEnvironment [org.springframework.core.env.SystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:59:58,951 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource random [org.springframework.boot.context.config.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2017-04-04 11:59:58,955 INFO  c.u.j.EnableEncryptablePropertySourcesPostProcessor - Converting PropertySource applicationConfig: [file:dashboard.properties] [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2017-04-04 11:59:58,973 INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-04 11:59:59,022 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+2017-04-04 12:00:00,070 INFO  c.c.d.collector.CollectorTask - Running Collector: GitHub
+2017-04-04 12:00:00,070 INFO  c.c.d.collector.CollectorTask - iNFO ABOUT TRACEBACK
+2017-04-04 12:00:00,072 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 12:00:00,073 INFO  c.c.d.collector.CollectorTask - Starting...
+2017-04-04 12:00:00,073 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 12:00:00,075 INFO  c.c.d.collector.CollectorTask - Repo Count              0        0s
+2017-04-04 12:00:00,075 INFO  c.c.d.collector.CollectorTask - New Commits             0        0s
+2017-04-04 12:00:00,075 INFO  c.c.d.collector.CollectorTask - Finished                         0s
+2017-04-04 12:00:00,260 INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService  'taskScheduler'
+2017-04-04 12:00:00,460 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 12:00:00,462 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 12:00:01,034 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 12:00:01,098 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@407e2dd1, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@7f3b7433, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@33399a3d, socketFactory=javax.net.DefaultSocketFactory@4bdd3b7d, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 12:00:01,315 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:20}] to localhost:27017
+2017-04-04 12:00:01,318 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=694078}
+2017-04-04 12:00:01,522 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:21}] to localhost:27017
+2017-04-04 12:00:01,730 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 12:00:01,730 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 12:00:01,732 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 12:00:01,739 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@407e2dd1, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@7f3b7433, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@33399a3d, socketFactory=javax.net.DefaultSocketFactory@4bdd3b7d, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 12:00:01,759 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 12:00:01,759 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 12:00:01,761 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 12:00:01,770 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@407e2dd1, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@7f3b7433, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@33399a3d, socketFactory=javax.net.DefaultSocketFactory@4bdd3b7d, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 12:00:01,773 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:22}] to localhost:27017
+2017-04-04 12:00:01,782 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=1122692}
+2017-04-04 12:00:01,804 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:23}] to localhost:27017
+2017-04-04 12:00:01,805 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=408862}
+2017-04-04 12:00:02,041 INFO  c.c.dashboard.config.MongoConfig - ReplicaSetfalse
+2017-04-04 12:00:02,042 INFO  c.c.dashboard.config.MongoConfig - Initializing Mongo Client server at: localhost:27017
+2017-04-04 12:00:02,044 INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2017-04-04 12:00:02,052 INFO  c.c.dashboard.config.MongoConfig - Connecting to Mongo: Mongo{options=MongoClientOptions{description='null', readPreference=primary, writeConcern=WriteConcern{w=1, wtimeout=0, fsync=false, j=false, codecRegistry=org.bson.codecs.configuration.ProvidersCodecRegistry@407e2dd1, minConnectionsPerHost=0, maxConnectionsPerHost=100, threadsAllowedToBlockForConnectionMultiplier=5, serverSelectionTimeout=30000, maxWaitTime=120000, maxConnectionIdleTime=0, maxConnectionLifeTime=0, connectTimeout=10000, socketTimeout=0, socketKeepAlive=false, sslEnabled=false, sslInvalidHostNamesAllowed=false, alwaysUseMBeans=false, heartbeatFrequency=10000, minHeartbeatFrequency=500, heartbeatConnectTimeout=20000, heartbeatSocketTimeout=20000, localThreshold=15, requiredReplicaSetName='null', dbDecoderFactory=com.mongodb.DefaultDBDecoder$1@7f3b7433, dbEncoderFactory=com.mongodb.DefaultDBEncoder$1@33399a3d, socketFactory=javax.net.DefaultSocketFactory@4bdd3b7d, cursorFinalizerEnabled=true, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitQueueSize=500, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=20000, readTimeoutMS=20000, keepAlive=false, receiveBufferSize=0, sendBufferSize=0}}}
+2017-04-04 12:00:02,087 INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:24}] to localhost:27017
+2017-04-04 12:00:02,088 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 4, 2]}, minWireVersion=0, maxWireVersion=5, electionId=null, maxDocumentSize=16777216, roundTripTimeNanos=616256}
+2017-04-04 12:00:02,439 INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-04-04 12:00:02,454 INFO  com.capitalone.dashboard.Application - Started Application in 4.771 seconds (JVM running for 5.496)
+2017-04-04 12:05:00,051 INFO  c.c.d.collector.CollectorTask - Running Collector: GitHub
+2017-04-04 12:05:00,051 INFO  c.c.d.collector.CollectorTask - Running Collector: GitHub
+2017-04-04 12:05:00,051 INFO  c.c.d.collector.CollectorTask - iNFO ABOUT TRACEBACK
+2017-04-04 12:05:00,056 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 12:05:00,057 INFO  c.c.d.collector.CollectorTask - Starting...
+2017-04-04 12:05:00,057 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 12:05:00,065 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 12:05:00,066 INFO  c.c.d.collector.CollectorTask - Repo Count              0        0s
+2017-04-04 12:05:00,066 INFO  c.c.d.collector.CollectorTask - Starting...
+2017-04-04 12:05:00,069 INFO  c.c.d.collector.CollectorTask - New Commits             0        0s
+2017-04-04 12:05:00,069 INFO  c.c.d.collector.CollectorTask - Finished                         0s
+2017-04-04 12:05:00,069 INFO  c.c.d.collector.CollectorTask - -----------------------------------
+2017-04-04 12:05:00,113 INFO  c.c.d.collector.CollectorTask - Repo Count              0        0s
+2017-04-04 12:05:00,113 INFO  c.c.d.collector.CollectorTask - New Commits             0        0s
+2017-04-04 12:05:00,114 INFO  c.c.d.collector.CollectorTask - Finished                         0s

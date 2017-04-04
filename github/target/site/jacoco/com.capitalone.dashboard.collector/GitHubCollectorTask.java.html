@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>GitHubCollectorTask.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">com.capitalone.dashboard:github-scm-collector</a> &gt; <a href="index.source.html" class="el_package">com.capitalone.dashboard.collector</a> &gt; <span class="el_source">GitHubCollectorTask.java</span></div><h1>GitHubCollectorTask.java</h1><pre class="source lang-java linenums">package com.capitalone.dashboard.collector;
+
+
+import com.capitalone.dashboard.model.Collector;
+import com.capitalone.dashboard.model.CollectorItem;
+import com.capitalone.dashboard.model.CollectorType;
+import com.capitalone.dashboard.model.Commit;
+import com.capitalone.dashboard.model.GitHubRepo;
+import com.capitalone.dashboard.repository.BaseCollectorRepository;
+import com.capitalone.dashboard.repository.CommitRepository;
+import com.capitalone.dashboard.repository.ComponentRepository;
+import com.capitalone.dashboard.repository.GitHubRepoRepository;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.TaskScheduler;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * CollectorTask that fetches Commit information from GitHub
+ */
+@Component
+public class GitHubCollectorTask extends CollectorTask&lt;Collector&gt; {
+<span class="fc" id="L30">    private static final Log LOG = LogFactory.getLog(GitHubCollectorTask.class);</span>
+
+    private final BaseCollectorRepository&lt;Collector&gt; collectorRepository;
+    private final GitHubRepoRepository gitHubRepoRepository;
+    private final CommitRepository commitRepository;
+    private final GitHubClient gitHubClient;
+    private final GitHubSettings gitHubSettings;
+    private final ComponentRepository dbComponentRepository;
+
+    @Autowired
+    public GitHubCollectorTask(TaskScheduler taskScheduler,
+                                   BaseCollectorRepository&lt;Collector&gt; collectorRepository,
+                                   GitHubRepoRepository gitHubRepoRepository,
+                                   CommitRepository commitRepository,
+                                   GitHubClient gitHubClient,
+                                   GitHubSettings gitHubSettings,
+                                   ComponentRepository dbComponentRepository) {
+<span class="fc" id="L47">        super(taskScheduler, &quot;GitHub&quot;);</span>
+<span class="fc" id="L48">        this.collectorRepository = collectorRepository;</span>
+<span class="fc" id="L49">        this.gitHubRepoRepository = gitHubRepoRepository;</span>
+<span class="fc" id="L50">        this.commitRepository = commitRepository;</span>
+<span class="fc" id="L51">        this.gitHubClient = gitHubClient;</span>
+<span class="fc" id="L52">        this.gitHubSettings = gitHubSettings;</span>
+<span class="fc" id="L53">        this.dbComponentRepository = dbComponentRepository;</span>
+<span class="fc" id="L54">    }</span>
+
+    @Override
+    public Collector getCollector() {
+<span class="nc" id="L58">        Collector protoType = new Collector();</span>
+<span class="nc" id="L59">        protoType.setName(&quot;GitHub&quot;);</span>
+<span class="nc" id="L60">        protoType.setCollectorType(CollectorType.SCM);</span>
+<span class="nc" id="L61">        protoType.setOnline(true);</span>
+<span class="nc" id="L62">        protoType.setEnabled(true);</span>
+<span class="nc" id="L63">        return protoType;</span>
+    }
+
+    @Override
+    public BaseCollectorRepository&lt;Collector&gt; getCollectorRepository() {
+<span class="nc" id="L68">        return collectorRepository;</span>
+    }
+
+    @Override
+    public String getCron() {
+<span class="nc" id="L73">        return gitHubSettings.getCron();</span>
+    }
+
+	/**
+	 * Clean up unused deployment collector items
+	 *
+	 * @param collector
+	 *            the {@link Collector}
+	 */
+    @SuppressWarnings(&quot;PMD.AvoidDeeplyNestedIfStmts&quot;) // agreed, fixme
+	private void clean(Collector collector) {
+<span class="fc" id="L84">		Set&lt;ObjectId&gt; uniqueIDs = new HashSet&lt;ObjectId&gt;();</span>
+		/**
+		 * Logic: For each component, retrieve the collector item list of the type SCM.
+		 * Store their IDs in a unique set ONLY if their collector IDs match with GitHub collectors ID.
+		 */
+<span class="fc bfc" id="L89" title="All 2 branches covered.">		for (com.capitalone.dashboard.model.Component comp : dbComponentRepository.findAll()) {</span>
+<span class="pc bpc" id="L90" title="2 of 4 branches missed.">			if (comp.getCollectorItems() != null &amp;&amp; !comp.getCollectorItems().isEmpty()) {</span>
+<span class="fc" id="L91">				List&lt;CollectorItem&gt; itemList = comp.getCollectorItems().get(CollectorType.SCM);</span>
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">				if (itemList != null) {</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">					for (CollectorItem ci : itemList) {</span>
+<span class="pc bpc" id="L94" title="1 of 4 branches missed.">						if (ci != null &amp;&amp; ci.getCollectorId().equals(collector.getId())){</span>
+<span class="fc" id="L95">							uniqueIDs.add(ci.getId());</span>
+						}
+<span class="fc" id="L97">					}</span>
+				}
+			}
+<span class="fc" id="L100">		}</span>
+
+		/**
+		 * Logic: Get all the collector items from the collector_item collection for this collector.
+		 * If their id is in the unique set (above), keep them enabled; else, disable them.
+		 */
+<span class="fc" id="L106">		List&lt;GitHubRepo&gt; repoList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L107">		Set&lt;ObjectId&gt; gitID = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L108">		gitID.add(collector.getId());</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">		for (GitHubRepo repo : gitHubRepoRepository.findByCollectorIdIn(gitID)) {</span>
+<span class="pc bpc" id="L110" title="1 of 2 branches missed.">			if (repo != null) {</span>
+<span class="fc" id="L111">				repo.setEnabled(uniqueIDs.contains(repo.getId()));</span>
+<span class="fc" id="L112">				repoList.add(repo);</span>
+			}
+<span class="fc" id="L114">		}</span>
+<span class="fc" id="L115">		gitHubRepoRepository.save(repoList);</span>
+<span class="fc" id="L116">	}</span>
+
+
+    @Override
+    public void collect(Collector collector) {
+
+<span class="fc" id="L122">        logBanner(&quot;Starting...&quot;);</span>
+<span class="fc" id="L123">        long start = System.currentTimeMillis();</span>
+<span class="fc" id="L124">        int repoCount = 0;</span>
+<span class="fc" id="L125">        int commitCount = 0;</span>
+
+<span class="fc" id="L127">        clean(collector);</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">        for (GitHubRepo repo : enabledRepos(collector)) {</span>
+<span class="fc" id="L129">        	boolean firstRun = false;</span>
+<span class="pc bpc" id="L130" title="1 of 2 branches missed.">        	if (repo.getLastUpdated() == 0) firstRun = true;</span>
+<span class="fc" id="L131">        	repo.setLastUpdated(System.currentTimeMillis());</span>
+<span class="fc" id="L132">            repo.removeLastUpdateDate();  //moved last update date to collector item. This is to clean old data.</span>
+<span class="fc" id="L133">            gitHubRepoRepository.save(repo);</span>
+<span class="fc" id="L134">            LOG.debug(repo.getOptions().toString()+&quot;::&quot;+repo.getBranch());</span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">            for (Commit commit : gitHubClient.getCommits(repo, firstRun)) {</span>
+<span class="fc" id="L136">            	LOG.debug(commit.getTimestamp()+&quot;:::&quot;+commit.getScmCommitLog());</span>
+<span class="pc bpc" id="L137" title="1 of 2 branches missed.">                if (isNewCommit(repo, commit)) {</span>
+<span class="fc" id="L138">                    commit.setCollectorItemId(repo.getId());</span>
+<span class="fc" id="L139">                    commitRepository.save(commit);</span>
+<span class="fc" id="L140">                    commitCount++;</span>
+                }
+<span class="fc" id="L142">            }</span>
+
+<span class="fc" id="L144">            repoCount++;</span>
+<span class="fc" id="L145">        }</span>
+<span class="fc" id="L146">        log(&quot;Repo Count&quot;, start, repoCount);</span>
+<span class="fc" id="L147">        log(&quot;New Commits&quot;, start, commitCount);</span>
+
+<span class="fc" id="L149">        log(&quot;Finished&quot;, start);</span>
+<span class="fc" id="L150">    }</span>
+
+
+    private List&lt;GitHubRepo&gt; enabledRepos(Collector collector) {
+<span class="fc" id="L154">        return gitHubRepoRepository.findEnabledGitHubRepos(collector.getId());</span>
+    }
+
+    private boolean isNewCommit(GitHubRepo repo, Commit commit) {
+<span class="pc bpc" id="L158" title="1 of 2 branches missed.">        return commitRepository.findByCollectorItemIdAndScmRevisionNumber(</span>
+<span class="fc" id="L159">                repo.getId(), commit.getScmRevisionNumber()) == null;</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
