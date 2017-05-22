@@ -1,0 +1,55 @@
+import yaml
+import sys
+
+
+def compare_yaml(file1, path=[], part_dict=[]):
+    '''
+    Takes three arguments : file1, file2, part list to store tuples of keys with different values
+    Returns : reference of a list of tuples
+    '''
+
+    if type(file1) is dict:
+        for (keys, values) in file1.items():
+            path.append(keys)
+            return_truth = compare_yaml(file1[keys], path, part_dict)
+            if return_truth == True:
+                part_dict.append(('.'.join(path) , values))
+            path.remove(keys)
+
+    else:
+        return True
+
+if __name__ == "__main__":
+    file12 = open(sys.argv[1],'r')
+    file22 = open(sys.argv[2], 'r')
+    yaml_file1 = yaml.load(file12)
+    yaml_file2 = yaml.load(file22)
+    part_file1 = []
+    compare_yaml(yaml_file1, part_dict=part_file1)
+    part_dict1 = {}
+    for (i,j) in part_file1:
+        part_dict1[i] = j
+    part_file2 = []
+    compare_yaml(yaml_file2, part_dict=part_file2)
+    part_dict2 = {}
+    for (i,j) in part_file2:
+        part_dict2[i] = j
+    final_column_list1 = []
+    for (i,j) in part_dict2.items():
+        if i in part_dict1.keys():
+            if str(part_dict1[i]) != str(j):
+                final_column_list1.append((i + ':' +str(part_dict1[i]), i +':' + str(j)))
+        else:
+            final_column_list1.append(('', i +':' + str(j)))
+    final_column_list2 = []
+    for (i,j) in part_dict1.items():
+        if i in part_dict2.keys():
+            if str(part_dict2[i]) != str(j):
+                final_column_list2.append((i + ':' + str(part_dict2[i]), i + ':' + str(j)))
+        else:
+            final_column_list2.append(( i +':'+ str(j), ''))
+    final_diff = list(set(final_column_list1) | set(final_column_list2))
+    #print final_diff
+    print 'file1'.center(60), 'file2'.center(60)
+    for (i,j) in final_diff:
+        print i.ljust(70), j.ljust(70)
